@@ -1,0 +1,42 @@
+$blue: #3190e8;  
+$bc: #e4e4e4;
+$fc:#fff;
+
+
+//宽高
+@mixin wh($width, $height){
+	width: $width;
+	height: $height;
+}
+
+@mixin fj($type: space-between) {
+	display: flex;
+	justify-content: $type;
+}
+
+// 头部居左
+@mixin leftitem {
+	position: absolute;
+	top: .5rem;
+	padding: 0 .35rem;
+}
+
+// 头部居中
+@mixin  titleCenter {
+		position: absolute;
+        left: 50%;
+        transform: translateX(-50%);
+}
+
+// 头部居右
+@mixin  itemRight {
+	position: absolute;
+	right: 0;
+}
+
+// 行数据样式
+@mixin itemli {
+	font-size: .6rem;
+	padding: .5rem .5rem;
+	border-bottom: 1px solid $bc;
+}

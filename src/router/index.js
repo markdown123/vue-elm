@@ -1,22 +1,30 @@
 import Vue from 'vue'
 import VueRouter from 'vue-router'
-import Home from '../views/Home.vue'
+import App from '../App.vue'
+import Home from '../page/home/Home.vue'
+import City from '../page/city/City.vue'
+import Msite from '../page/msite/Msite.vue'
 
 Vue.use(VueRouter)
 
 const routes = [
   {
     path: '/',
-    name: 'Home',
-    component: Home
-  },
-  {
-    path: '/about',
-    name: 'About',
-    // route level code-splitting
-    // this generates a separate chunk (about.[hash].js) for this route
-    // which is lazy-loaded when the route is visited.
-    component: () => import(/* webpackChunkName: "about" */ '../views/About.vue')
+    component: App,
+    children: [
+      { path: '', redirect: '/home' },
+      // 首页城市选择
+      { path: '/home', component: Home },
+      // 当前城市选择页
+      { path: '/city/:cityId', component: City },
+      //所有商铺列表页
+      {
+        path: '/msite',
+        component: Msite,
+        meta: { keepAlive: true },
+      },
+
+    ]
   }
 ]
 

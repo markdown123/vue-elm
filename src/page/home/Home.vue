@@ -63,7 +63,6 @@ export default {
   },
   created() {
     this.changeHeader();
-    this.getData()
   },
   mounted() {
     // 获取当前城市
@@ -103,10 +102,6 @@ export default {
     },
   },
   methods: {
-    async getData() {
-      const {data: res} = await this.$request.get('/v1/cities?type=guess')
-      console.log(res);
-    },
     changeHeader() {
       this.$store.commit("changeHeader", "index");
     },

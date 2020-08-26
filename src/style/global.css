@@ -12,9 +12,7 @@ html,body{
 .el-card .el-card__header {
     padding: 0 .6rem;
 }
-.el-card .el-card__body {
-    padding:  .4166666666666667rem;
-}
+
 
 .el-carousel .el-carousel__button {
     width: .5rem;
@@ -27,4 +25,41 @@ html,body{
 .el-carousel__indicator--horizontal, 
 .is-active > .el-carousel__button  {
     background-color: #3190e8;
+}
+
+.el-rate .el-rate__icon {
+    font-size: .5rem;
+  margin: 0;
+}
+
+a {
+    text-decoration: none;
+    color: black;
+}
+
+ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.el-tabs .el-tabs--left .el-tabs__item {
+    text-align: center;
+}
+
+/* .el-tabs .el-tabs__nav .is-left {
+    overflow: hidden scroll;
+} */
+
+.el-tabs .el-tabs__item {
+    padding: 0;
+    text-align: center !important;
+}
+
+.el-tabs__header .is-left {
+    overflow: hidden scroll;
+}
+
+.el-tabs .el-tabs--left {
+    height: 18rem !important;
 }

@@ -8,6 +8,11 @@
 
 export default {
   name: 'app',
+  created() {
+    if(sessionStorage.getItem('shoplist') !== '') {
+      this.$store.commit('EventListener')
+    }
+  }
 
 }
 </script>

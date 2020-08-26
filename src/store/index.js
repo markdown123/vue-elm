@@ -14,8 +14,10 @@ export default new Vuex.Store({
     searchResultStatus: false,
     // 保存的地址
     geohash:'',
-    latitue: '',
-    longtitue: '',
+    latitude: '',
+    longitude: '',
+    // 店铺列表
+    shoplist: [],
 
   },
   mutations,

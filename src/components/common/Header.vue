@@ -3,7 +3,10 @@
     <!-- 城市首页头部 -->
     <div v-if="$store.state.headerMark === 'index'">
       <span>饿了啊</span>
-      <span class="login">登录 | 注册</span>
+      <router-link :to="'/login'">
+        <span class="login">登录 | 注册</span>
+      </router-link>
+      
     </div>
 
     <!-- 城市选择页面头部 -->
@@ -17,9 +20,16 @@
 
     <!-- 店铺选择首页 -->
     <div v-if="$store.state.headerMark === 'shop'">
-      <i class="el-icon-search"></i>
-      <span class="address">{{centerItem}}</span>
-      <span class="login">登录 | 注册</span>
+      <router-link :to="'/search/'+searchParam">
+        <i class="el-icon-search"></i>
+      </router-link>
+      <router-link :to="'/home'">
+        <span class="address">{{centerItem}}</span>
+      </router-link>
+      <router-link :to="'/login'">
+        <span class="login">登录 | 注册</span>
+      </router-link>
+      
     </div>
   </div>
 </template>
@@ -29,7 +39,7 @@ export default {
   data() {
     return {};
   },
-  props: ["headTitle", "centerItem"],
+  props: ["headTitle", "centerItem","searchParam"],
   created() {},
   methods: {},
 };

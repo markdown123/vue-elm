@@ -4,6 +4,10 @@ import App from '../App.vue'
 import Home from '../page/home/Home.vue'
 import City from '../page/city/City.vue'
 import Msite from '../page/msite/Msite.vue'
+import Food from '../page/msite/food/Food.vue'
+import Search from '../page/msite/search/Search.vue'
+import Login from '../page/login/Login.vue'
+import Shop from '../page/msite/shop/Shop.vue'
 
 Vue.use(VueRouter)
 
@@ -23,6 +27,26 @@ const routes = [
         component: Msite,
         meta: { keepAlive: true },
       },
+      // 特色商品列表
+      {
+        path: '/food',
+        component:Food,
+      },
+      // 搜索店铺
+      {
+        path: '/search/:geohash',
+        component: Search,
+      },
+      //登录注册页
+      {
+        path: '/login',
+        component: Login
+      },
+      // 店铺首页
+      {
+        path: '/shop/:geohash',
+        component: Shop,
+      }
 
     ]
   }

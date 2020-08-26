@@ -33,7 +33,16 @@ export function getAddress(geohash) {
 }
 
 // 获取食品类型
-export function getFoodType(geohash) {
-    return axios.get(`/v2/index_entry
-    ?geohash=${geohash}&group_type=1`)
+export function getFoodType() {
+    return axios.get(`/v2/index_entry`)
+}
+
+// 获得附近商铺数据
+export function getShopData(latitude,longitude) {
+    return axios.get(`/shopping/restaurants?latitude=${latitude}&longitude=${longitude}`)
+} 
+
+// 获得某餐馆的食物
+export function getFoodData(id) {
+    return axios.get(`/shopping/v2/menu?restaurant_id=${id}`)
 }
